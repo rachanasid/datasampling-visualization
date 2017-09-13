@@ -1,0 +1,137 @@
+body {
+  background-color: #F1F1F1;
+}
+
+.bar rect {
+  fill: #412F87;
+}
+
+.bar {
+  fill: #412F87;
+}
+
+.bar text {
+  fill: #fff;
+  font: 10px sans-serif;
+}
+
+ul.variable {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+ul.variable li {
+  float: left;
+}
+
+ul.variable li a {
+  display: inline-block;
+  color: #5FCF80;
+  text-align: center;
+  padding: 8px 12px;
+  text-decoration: none;
+  transition: 0.3s;
+  font-size: 15px;
+  margin-left: 3.7cm;
+}
+
+ul.variable li a:hover {
+  background-color: #ddd;
+}
+
+.active {
+  background-color: #3E474F;
+}
+
+.nodes circle {
+  stroke: #fff;
+  stroke-width: 1.5px;
+}
+
+.line {
+  fill: none;
+  stroke: steelblue;
+  stroke-width: 1.5px;
+}
+
+.dropbtn {
+    background-color: steelblue;
+    padding: 13px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+}
+
+.dropdown {
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 230px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {background-color: #f1f1f1}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown:hover .dropbtn {
+    background-color: steelblue;
+}
+
+.axis,
+.frame {
+  shape-rendering: crispEdges;
+}
+
+.axis line {
+  stroke: #ddd;
+}
+
+.axis path {
+  display: none;
+}
+
+.cell text {
+  font-weight: bold;
+  text-transform: capitalize;
+  fill: black;
+}
+
+.frame {
+  fill: none;
+  stroke: #aaa;
+}
+
+circle {
+  fill-opacity: .7;
+}
+
+circle.hidden {
+  fill: #ccc !important;
+}
+
+.extent {
+  fill: #000;
+  fill-opacity: .125;
+  stroke: #fff;
+}
+
+.btn-active {
+  background-color: #008000 !important;
+}

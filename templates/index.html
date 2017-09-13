@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <script src="//d3js.org/d3.v4.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.js"></script>
+    <link rel="stylesheet" href="static/style.css">
+    <script src="static/script.js"></script>
+  </head>
+
+  <body>
+    <div class="dropdown">
+      <div id="normal">
+      <button id="btn-normal" class="dropbtn">Whole Data</button>
+      <div class="dropdown-content">
+          <a href="javascript:void(0)" class="active" onclick="display_samples('LoyalCH', 'new_OJ.csv');">Whole Data</a>
+          <a href="javascript:void(0)" onclick="display_samples('LoyalCH', 'random_sampling.csv');">Random Sampling</a>
+          <a href="javascript:void(0)" onclick="display_samples('LoyalCH', 'stratified_sampling.csv');">Stratified Sampling</a>
+          <a href="javascript:void(0)" onclick="display_elbow_plot('kmeans_data.csv');">Elbow Plot</a>
+          <a href="javascript:void(0)" onclick="display_scree_plot('scree_plot_data_random.csv');">Scree Plot Random</a>
+          <a href="javascript:void(0)" onclick="display_scree_plot('scree_plot_data_stratified.csv');">Scree Plot Stratified</a>
+          <a href="javascript:void(0)" onclick="display_squared_loadings('squared_loadings_data_random.csv');">Squared loading Random</a>
+          <a href="javascript:void(0)" onclick="display_squared_loadings('squared_loadings_data_stratified.csv');">Squared loading Stratified</a>
+        </div>
+      </div>
+    </div>
+    <div class="dropdown">
+      <div id="pca">
+      <button id="btn-pca" class="dropbtn">PCA Scatter Plot - Random</button>
+      <div class="dropdown-content">
+          <a href="javascript:void(0)" onclick="display_pca_scatter('pca_dim_data_random.csv');">PCA Scatter Plot - Random</a>
+          <a href="javascript:void(0)" onclick="display_pca_scatter('pca_dim_data_stratified.csv');">PCA Scatter Plot - Stratified</a>
+          <a href="javascript:void(0)" onclick="display_scatterplot_matrix('dim_red_data_random.csv');">PCA ScatterPlot Matrix - Random</a>
+          <a href="javascript:void(0)" onclick="display_scatterplot_matrix('dim_red_data_stratified.csv');">PCA ScatterPlot Matrix - Stratified</a>
+      </div>
+        </div>
+    </div>
+    <div class="dropdown">
+      <div id="mds">
+      <button id="btn-mds" class="dropbtn">MDS Correlation - Random</button>
+      <div class="dropdown-content">
+          <a href="javascript:void(0)" onclick="display_mds('mds_dim_data_correlation_random.csv');">MDS Correlation - Random</a>
+          <a href="javascript:void(0)" onclick="display_mds('mds_dim_data_correlation_stratified.csv');">MDS Correlation - Stratified</a>
+          <a href="javascript:void(0)" onclick="display_mds('mds_dim_data_euclidean_random.csv');">MDS Euclidean - Random</a>
+          <a href="javascript:void(0)" onclick="display_mds('mds_dim_data_euclidean_stratified.csv');">MDS Euclidean - Stratified</a>
+      </div>
+        </div>
+    </div>
+    <svg width="1200" height="620"></svg>
+
+    <script type="text/javascript">
+      $(function(){
+        $('#btn-normal').addClass('btn-active');
+
+        $("#normal a").click(function(){
+          $("#normal .dropbtn:first-child").text($(this).text());
+          $("#normal .dropbtn:first-child").val($(this).text());
+          $('#btn-normal').addClass('btn-active');
+          $('#btn-pca').removeClass('btn-active');
+          $('#btn-mds').removeClass('btn-active');
+        });
+        $("#pca a").click(function(){
+          $("#pca .dropbtn:first-child").text($(this).text());
+          $("#pca .dropbtn:first-child").val($(this).text());
+          $('#btn-normal').removeClass('btn-active');
+          $('#btn-pca').addClass('btn-active');
+          $('#btn-mds').removeClass('btn-active');
+        });
+        $("#mds a").click(function(){
+          $("#mds .dropbtn:first-child").text($(this).text());
+          $("#mds .dropbtn:first-child").val($(this).text());
+          $('#btn-normal').removeClass('btn-active');
+          $('#btn-pca').removeClass('btn-active');
+          $('#btn-mds').addClass('btn-active');
+        });
+       });
+    </script>
+  </body>
+
+</html>
