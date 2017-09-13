@@ -1,1 +1,3 @@
 # datasampling-visualization
+
+The project contains a Python script app.py, HTML file index.html, CSS file style.css and JavaScript file script.js. Data clustering and dimension reduction are implemented on Orange juice data set. The chosen data set contains 1070 rows and 18 columns. Random sampling, Stratified sampling are used to reduce the number of rows to 500. PCA is implemented to reduce the number of columns to 18. MDS is used to reduce the dimension of data to 2. DataFrames is used to store the big data. Using D3.js, the final data obtained after sampling and performing PCA analysis is displayed.
